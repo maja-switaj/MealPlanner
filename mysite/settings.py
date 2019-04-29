@@ -25,7 +25,7 @@ SECRET_KEY = '1vk2)6nm@fr6u34yobrc$36p=54ky6iv%9&1ss!p-_ksd@u9o2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.mealplan.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'planner',
+     
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+REGISTRATION_AUTO_LOGIN = True  # automatyczne logowanie po rejestracji
+LOGIN_REDIRECT_URL = '/konto_uzyt/'  # strona docelowa po zalogowaniu
+LOGIN_URL = '/konta/login/'  # strona logowania
