@@ -1,0 +1,18 @@
+<h1>Dodaj produkt</h1>
+
+<form action="." method="post" id="pform">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <h3>Info:</h3>
+  {{ info.management_form }}
+  {{ info.non_form_errors }}
+  {% for i in info %}
+  {{ i.id }}
+    <div class="{{ info.prefix }}">
+      <span>{{ forloop.counter }})&nbsp;</span>
+      {{ i.name.errors }}
+    </div>
+  {% endfor %}
+  <br /><input type="submit" value="Zapisz">
+</form>
