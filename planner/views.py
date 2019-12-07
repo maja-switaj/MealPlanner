@@ -1,13 +1,16 @@
-from django.shortcuts import render
-from . import models
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from . import models
 from . import forms
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
  
 # Create your views here.
+
+def index(request):
+        return render(request, 'index.html', {})
+ 
 def product_list(request):
     return render(request, 'planner/product_list.html', {})
 
@@ -21,12 +24,12 @@ def registration_form(request):
     return render(request, 'planner/registration_form.html', {})
 
 @method_decorator(login_required, 'dispatch')
-class ProductCreate(CreateView):
+class MealCreate(CreateView):
     """Widok dodawania produktow"""
 
-    model = models.Product
-    form_class = forms.ProductForm
-    success_url = reverse_lazy('lista')  # '/pizza/lista'
+    model = models.Meal
+    form_class = forms.MealForm
+    success_url = reverse_lazy('lista')   
 
     def get_context_data(self, **kwargs):
         context = super(ProductCreate, self).get_context_data(**kwargs)

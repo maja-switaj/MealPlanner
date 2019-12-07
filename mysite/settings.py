@@ -56,7 +56,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,4 +124,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REGISTRATION_AUTO_LOGIN = True  # automatyczne logowanie po rejestracji
 LOGIN_REDIRECT_URL = '/konto_uzyt/'  # strona docelowa po zalogowaniu
-LOGIN_URL = '/konta/login/'  # strona logowania
+LOGIN_URL = '/login/'  # strona logowania

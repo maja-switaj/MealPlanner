@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Planner for your meals</title>
+    </head>
+    <body>
+        <p>Strona główna</p>
+         <ul>
+  {% if not user.is_authenticated %}
+    <li><a href="{% url 'login/' %}">Zaloguj się</a></li>
+    <li><a href="{% url 'konta/' %}">Utwórz konto</a></li>
+    <li><a href="{% url 'lista/' %}">Lista</a></li>
+  {% else %}
+    <li><a href="{% url 'logout/' %}">Wyloguj się</a></li>
+  {% endif %}
+</ul>
+    </body>
+</html>

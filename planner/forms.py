@@ -5,14 +5,14 @@ from . import models
 from django.forms.models import inlineformset_factory
 
 
-class ProductForm(ModelForm):
+class MealForm(ModelForm):
 
     class Meta:
-        model = models.Product
+        model = models.Meal
         exclude = ('more_info')
-      
+    
 
-
-PFormSet = inlineformset_factory(
-    model=models.Skladnik,
+MealFormSet = inlineformset_factory(
+    parent_model=models.Meal,
+    model = model.Product
 )

@@ -5,11 +5,11 @@
   {{ form.as_p }}
 
   <h3>Info:</h3>
-  {{ info.management_form }}
-  {{ info.non_form_errors }}
-  {% for i in info %}
+  {{ product.management_form }}
+  {{ product.non_form_errors }}
+  {% for i in product %}
   {{ i.id }}
-    <div class="{{ info.prefix }}">
+    <div class="{{ produkt.prefix }}">
       <span>{{ forloop.counter }})&nbsp;</span>
       {{ i.name.errors }}
     </div>

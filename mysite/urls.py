@@ -14,12 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin 
-from django.urls import path, include 
+from django.urls import url, include 
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('planner.urls')),
-   #path(r'^konto_uzyt/', include('konto_uzyt.urls')),
-   #path(r'^konta/', include('backends.simple.urls')),
+    #url(r'^', include('planner.urls')),
+    url(r'^planner/', views.planner), # index = strona glowna
+    url(r'^admin/', admin.site.urls),
+
      
 ]
+
+
